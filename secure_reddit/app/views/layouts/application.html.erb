@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SecureReddit</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <% if user_signed_in? %>
+        <li>Oh hai <%= @current_user.email %></li>
+        <li><%= link_to 'Sign Out', sign_out_path, method: :post %></li>
+      <% else %>
+
+      <% end %>
+    </ul>
+  </nav>
+
+  <% if notice %>
+    <div class="notice"><%= notice %></div>
+  <% end %>
+
+
+<%= yield %>
+
+</body>
+</html>
