@@ -1,0 +1,7 @@
+<h1>Movies</h1>
+
+<% @movies.each do |movie| %>
+  <%= movie.title %><br/>
+  <%= image_tag attachment_url(movie, :photo, :fill, 300, 500, format: "jpg") %>
+
+<% end %>
